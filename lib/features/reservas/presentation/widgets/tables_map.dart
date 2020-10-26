@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Back-End TPP2'),
+        title: Text('Reservar Mesa'),
       ),
       body: Center(
         child: Column(

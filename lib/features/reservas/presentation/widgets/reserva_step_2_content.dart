@@ -75,37 +75,23 @@ class _ReservaStep2ContentState extends State<ReservaStep2Content> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: List.generate(
                               availableTables.length,
-                              (index) => Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      FlatButton(
-                                        onPressed: () {
-                                          print('vemos el mapa');
-                                        },
-                                        child: Text(
-                                          'VER UBICACIÓN',
-                                          style: TextStyle(
-                                              fontStyle: FontStyle.italic,
-                                              color: Colors.blueGrey),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            _selectedMesaId =
-                                                availableTables[index].id;
-                                          });
-                                        },
-                                        child: TableCard(
-                                            mesa: availableTables[index],
-                                            color: _selectedMesaId ==
-                                                    availableTables[index].id
-                                                ? Colors.greenAccent
-                                                : Colors.white),
-                                      ),
-                                    ],
-                                  )),
+                              (index) => Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _selectedMesaId =
+                                          availableTables[index].id;
+                                    });
+                                  },
+                                  child: TableCard(
+                                      mesa: availableTables[index],
+                                      color: _selectedMesaId ==
+                                              availableTables[index].id
+                                          ? Colors.greenAccent
+                                          : Colors.white),
+                                ),
+                              )),
                         ),
                         SizedBox(height: 40),
                         TextField(
